@@ -55,6 +55,19 @@ $hotels = [
 </head>
 
 <body>
+    <div class="conainer">
+        <ul>
+            <?php foreach ($hotels as $hotel) { ?>
+
+                <h2><?= $hotel['name'] ?></h2>
+                <p><?= $hotel['description'] ?></p>
+                <p>Parcheggio: <?= $hotel['parking'] ? 'Disponibile' : 'Non disponibile' ?></p>
+                <p>Voto: <?= $hotel['vote'] ?></p>
+                <p>Distanza dal centro: <?= $hotel['distance_to_center'] ?> km</p>
+
+            <?php } ?>
+        </ul>
+    </div>
 
 </body>
 
