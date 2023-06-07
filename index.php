@@ -61,45 +61,25 @@ $hotels = [
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                    <th scope="col">Handle</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Nome Hotel</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Parcheggio</th>
+                    <th scope="col">Voto</th>
+                    <th scope="col">Distanza dal centro</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                <tr> <?php foreach ($hotels as $key => $hotel) { ?>
+                        <th scope="row"><?= $key ?></th>
+                        <td><?= $hotel['name'] ?></td>
+                        <td><?= $hotel['description'] ?></td>
+                        <td><?= $hotel['parking'] ? 'Disponibile' : 'Non disponibile' ?></td>
+                        <td><?= $hotel['vote'] ?></td>
+                        <td><?= $hotel['distance_to_center'] ?></td>
+                </tr> <?php } ?>
+
             </tbody>
         </table>
-
-        <ul>
-            <?php foreach ($hotels as $hotel) { ?>
-
-                <h2><?= $hotel['name'] ?></h2>
-                <p><?= $hotel['description'] ?></p>
-                <p>Parcheggio: <?= $hotel['parking'] ? 'Disponibile' : 'Non disponibile' ?></p>
-                <p>Voto: <?= $hotel['vote'] ?></p>
-                <p>Distanza dal centro: <?= $hotel['distance_to_center'] ?> km</p>
-
-            <?php } ?>
-        </ul>
     </div>
 
 </body>
